@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<table border="1">
+<tr><th>ID</th><th>Name</th><th>Price</th><th>Actions</th></tr>
+{% for p in products %}
+<tr>
+    <td>{{ p.id }}</td>
+    <td>{{ p.name }}</td>
+    <td>{{ p.price }}</td>
+    <td><a href="{{ url_for('delete_product', id=p.id) }}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
